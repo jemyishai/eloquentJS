@@ -3,7 +3,6 @@
    return true;
  }
  */
-
 let propCheck = (arr1,arr2) => arr1.every(x => arr2.includes(x))
 
 let deepEqual = (comp1, comp2) => {
@@ -19,7 +18,7 @@ let deepEqual = (comp1, comp2) => {
      		for (let sameKey of keys1){
              return deepEqual(comp1[sameKey],comp2[sameKey])
             }
-     	}
+     	} // may need another else false here
      } else{
       return false;
      }
