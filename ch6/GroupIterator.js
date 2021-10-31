@@ -36,32 +36,29 @@ class GroupIterator {
 
 
   [Symbol.iterator](){
-  //  fix this jank
     let val = this.values;
     let count = this.count;
     return {
-
       next(){
-        let output = count >= val.length ?
-        //count needs to be reset here
-          {
+        let output;
+        if (count >= val.length){
+          count = 0;
+           output ={
             value: null,
             done: true
           }
-        :
-       {
-          value: val[count],
-          done: false
+        } else{
+          output = {
+              value: val[count],
+              done: false
+            }
+            count++;
         }
-        count++;
-        return output;
+        return output
       }
     }
   }
 }
-
-// let group = Group.from([10, 20])
-// let exposedNext = group[Symbol.iterator]()
 
 
 for (let value of Group.from(["a", "b", "c"])) {
