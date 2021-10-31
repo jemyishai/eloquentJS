@@ -43,6 +43,7 @@ class GroupIterator {
 
       next(){
         let output = count >= val.length ?
+        //count needs to be reset here
           {
             value: null,
             done: true
